@@ -1,0 +1,5 @@
+USE SULTANOV
+SELECT ФИО, 
+LEN(ФИО) AS  Количество_символов
+FROM
+Академики

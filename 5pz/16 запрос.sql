@@ -1,0 +1,3 @@
+SELECT
+DATEADD(DAY, -100, GETDATE()) AS День_100_Назад
+
