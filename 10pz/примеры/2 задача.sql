@@ -1,0 +1,2 @@
+USE SULTANOV_10PZ
+DROP TABLE ”правлениее

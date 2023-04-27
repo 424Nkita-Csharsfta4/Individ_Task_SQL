@@ -1,0 +1,6 @@
+USE SULTANOV_10PZ
+CREATE TABLE Управлениее
+(
+	ID INT,
+	Вид VARCHAR(20)
+)
