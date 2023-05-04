@@ -42,31 +42,31 @@ WHERE Books.Rating > (SELECT AVG(Rating) FROM Books);
 /**
 *11
 */
-SELECT Читатели.Фамилия, Книги.Название
-FROM Читатели
-JOIN Выданные_книги ON Читатели.Код_читателя = Выданные_книги.Код_читателя
-JOIN Книги ON Выданные_книги.Код_книги = Книги.Код_книги;
-SELECT Название, Автор, 'Книга' AS Тип
-FROM Книги
+SELECT Readers.Last Name, Books.Name
+FROM Readers
+JOIN Issued_books ON Readers.Reader_code = Issued_books.Reader_code
+JOIN Books ON Issued_books.Book_code = Books.Book_code;
+SELECT Title, Author, 'Book' AS Type
+FROM Books
 UNION
-SELECT Название, Автор, 'Журнал' AS Тип
-FROM Журналы;
-SELECT Фамилия, Имя, Адрес
-FROM Читатели
+SELECT Title, Author, 'Journal' AS Type
+FROM Journals;
+SELECT Last Name, First Name, Address
+FROM Readers
 EXCEPT
-SELECT Читатели.Фамилия, Читатели.Имя, Читатели.Адрес
-FROM Читатели
-JOIN Выданные_книги ON Читатели.Код_читателя = Выданные_книги.Код_читателя
-WHERE Выданные_книги.Дата_возврата IS NOT NULL;
-SELECT Автор
-FROM Книги
+SELECT Readers.Last Name, Readers.First Name, Readers.Address
+FROM Readers
+JOIN Books Given out ON Readers.Reader_code = Given_books.Reader_code
+WHERE Given_books.Date_return IS NOT NULL;
+SELECT Author
+FROM Books
 INTERSECT
-SELECT Автор
-FROM Журналы;
-SELECT Фамилия, Имя, Адрес
-FROM Читатели
-WHERE Код_читателя IN (
-  SELECT Код_читателя
-  FROM Выданные_книги
-  WHERE Дата_возврата IS NULL
+SELECT Author
+FROM Journals;
+SELECT Last Name, First Name, Address
+FROM Readers
+WHERE Readers_code IN (
+  SELECT Reader_ID
+  FROM GIFT_Books
+  WHERE Date_returned IS NULL
 );
