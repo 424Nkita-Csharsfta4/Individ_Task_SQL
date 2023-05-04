@@ -38,3 +38,35 @@ WHERE YEAR(Giving_books.Giving_ date) = 2023 AND MONTH(Giving_books.Giving_ date
 SELECT Books.Title, Books.Rating
 FROM Books
 WHERE Books.Rating > (SELECT AVG(Rating) FROM Books);
+
+/**
+*11
+/
+SELECT Читатели.Фамилия, Книги.Название
+FROM Читатели
+JOIN Выданные_книги ON Читатели.Код_читателя = Выданные_книги.Код_читателя
+JOIN Книги ON Выданные_книги.Код_книги = Книги.Код_книги;
+SELECT Название, Автор, 'Книга' AS Тип
+FROM Книги
+UNION
+SELECT Название, Автор, 'Журнал' AS Тип
+FROM Журналы;
+SELECT Фамилия, Имя, Адрес
+FROM Читатели
+EXCEPT
+SELECT Читатели.Фамилия, Читатели.Имя, Читатели.Адрес
+FROM Читатели
+JOIN Выданные_книги ON Читатели.Код_читателя = Выданные_книги.Код_читателя
+WHERE Выданные_книги.Дата_возврата IS NOT NULL;
+SELECT Автор
+FROM Книги
+INTERSECT
+SELECT Автор
+FROM Журналы;
+SELECT Фамилия, Имя, Адрес
+FROM Читатели
+WHERE Код_читателя IN (
+  SELECT Код_читателя
+  FROM Выданные_книги
+  WHERE Дата_возврата IS NULL
+);
