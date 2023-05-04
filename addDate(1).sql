@@ -44,7 +44,11 @@ VALUES
 (43, 'The Silver Chair', 'C.S. Lewis', 9.50, 1.90, 'Fantasy'),
 (44, 'The Horse and His Boy', 'C.S. Lewis', 10.00, 2.00, 'Fantasy'),
 (45, 'The Magician''s Nephew', 'C.S. Lewis', 10.50, 2.10, 'Fantasy');
-
+(46, 'The Last Battle', 'C.S. Lewis', 9.80, 1.95, 'Fantasy')
+(47, 'Harry Potter and the Philosopher''s Stone', 'J.K. Rowling', 9.3, 1.2, 'Fantasy'),
+(48, 'Harry Potter and the Chamber of Secrets', 'J.K. Rowling', 9.4, 1.3, 'Fantasy'),
+(49, 'Harry Potter and the Prisoner of Azkaban', 'J.K. Rowling', 9.5, 1.4, 'Fantasy'),
+(50, 'Harry Potter and the Goblet of Fire', 'J.K. Rowling', 9.6, 1.5, 'Fantasy')
 
 
 INSERT INTO Readers (ReaderCode, LastName, FirstName, MiddleName, Address, Phone)
@@ -78,7 +82,27 @@ VALUES
 (27, 'Perez', 'Nicholas', 'O.', '3434 Oak Ave', '555-1874'),
 (28, 'Roberts', 'Rachel', 'P.', '3535 Pine Rd', '555-9653'),
 (29, 'Turner', 'David', 'Q.', '3636 Cedar Dr', '555-7432'),
-
+(30, 'Garcia', 'Maria', 'R.', '3737 Maple St', '555-3367'),
+(31, 'Nguyen', 'Tuan', 'S.', '3838 Elm Blvd', '555-5509'),
+(32, 'Patel', 'Raj', 'T.', '3939 Birch Ln', '555-1423'),
+(33, 'Lee', 'Jin', 'U.', '4040 Pine St', '555-7291'),
+(34, 'Wong', 'Wei', 'V.', '4141 Oak Ave', '555-9087'),
+(35, 'Kim', 'Young', 'W.', '4242 Cedar Dr', '555-6562'),
+(36, 'Singh', 'Amit', 'X.', '4343 Maple St', '555-2312'),
+(37, 'Park', 'Min', 'Y.', '4444 Elm Blvd', '555-9178'),
+(38, 'Gupta', 'Anjali', 'Z.', '4545 Birch Ln', '555-3896'),
+(39, 'Gonzalez', 'Juan', 'A.', '4646 Pine St', '555-6229'),
+(40, 'Smith', 'John', 'B.', '4747 Oak Ave', '555-3015')
+(41, 'Johnson', 'Sarah', 'C.', '4848 Cedar Dr', '555-1772'),
+(42, 'Anderson', 'Eric', 'D.', '4949 Maple St', '555-4421'),
+(43, 'Brown', 'Jessica', 'E.', '5050 Elm Blvd', '555-7865'),
+(44, 'Davis', 'Matthew', 'F.', '5151 Birch Ln', '555-9276'),
+(45, 'Garcia', 'Juan', 'G.', '5252 Pine St', '555-6803'),
+(46, 'Hernandez', 'Maria', 'H.', '5353 Oak Ave', '555-2994'),
+(47, 'Jackson', 'William', 'I.', '5454 Cedar Dr', '555-1088'),
+(48, 'Kim', 'Ji', 'J.', '5555 Maple St', '555-5555'),
+(49, 'Lopez', 'Sofia', 'K.', '5656 Elm Blvd', '555-3412'),
+(50, 'Martinez', 'Carlos', 'L.', '5757 Birch Ln', '555-7319');
 
 INSERT INTO IssuedBooks (IssueCode, BookCode, ReaderCode, IssueDate, ReturnDate)
 VALUES
@@ -111,3 +135,24 @@ VALUES
 (27, 5, 3, '2023-05-31', '2023-06-07'),
 (28, 1, 2, '2023-06-02', '2023-06-09'),
 (29, 2, 1, '2023-06-04', '2023-06-11'),
+(30, 3, 2, '2023-06-06', '2023-06-13'),
+(31, 4, 3, '2023-06-08', '2023-06-15'),
+(32, 5, 4, '2023-06-10', '2023-06-17'),
+(33, 1, 3, '2023-06-12', '2023-06-19'),
+(34, 2, 4, '2023-06-14', '2023-06-21'),
+(35, 3, 5, '2023-06-16', '2023-06-23'),
+(36, 4, 1, '2023-06-18', '2023-06-25'),
+(37, 5, 2, '2023-06-20', '2023-06-27'),
+(38, 1, 4, '2023-06-22', '2023-06-29'),
+(39, 2, 5, '2023-06-24', '2023-07-01'),
+(40, 3, 1, '2023-06-26', '2023-07-03'),
+(41, 4, 2, '2023-06-28', '2023-07-05'),
+(42, 5, 3, '2023-06-30', '2023-07-07'),
+(43, 1, 2, '2023-07-02', '2023-07-09'),
+(44, 2, 1, '2023-07-04', '2023-07-11'),
+(45, 3, 4, '2023-07-06', '2023-07-13'),
+(46, 4, 5, '2023-07-08', '2023-07-15'),
+(47, 5, 1, '2023-07-10', '2023-07-17'),
+(48, 1, 3, '2023-07-12', '2023-07-19'),
+(49, 2, 4, '2023-07-14', '2023-07-21'),
+(50, 3, 5, '2023-07-16', '2023-07-23');
