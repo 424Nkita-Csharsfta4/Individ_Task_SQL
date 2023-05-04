@@ -12,29 +12,29 @@ ORDER BY Читатели.Фамилия ASC;
 /*
 *10
 */
-SELECT * FROM Книги WHERE Название LIKE '%война%';
-SELECT * FROM Читатели WHERE DATEDIFF(YEAR, Дата_рождения, GETDATE()) > 30;
-SELECT * FROM Выданные_книги WHERE Дата_возврата > GETDATE();
+SELECT * FROM Books WHERE Title LIKE '%war%';
+SELECT * FROM Readers WHERE DATEDIFF(YEAR, Birth Date, GETDATE()) > 30;
+SELECT * FROM Giving_books WHERE Date_return > GETDATE();
 
-SELECT Код_выдачи, DATEDIFF(day, Дата_выдачи, GETDATE()) AS Дни_с_момента_выдачи FROM Выданные_книги;
-SELECT Название, Цена, Цена * 0.9 AS Цена_со_скидкой FROM Книги;
-SELECT Фамилия, Имя, DATEDIFF(YEAR, Дата_рождения, GETDATE()) AS Возраст FROM Читатели;
-SELECT Код_книги, COUNT(*) AS Количество_выдач FROM Выданные_книги GROUP BY Код_книги;
-SELECT Жанр, AVG(Цена) AS Средняя_цена FROM Книги GROUP BY Жанр;
-SELECT DATEDIFF(YEAR, Дата_рождения, GETDATE()) AS Возраст, COUNT(*) AS Количество_читателей FROM Читатели GROUP BY DATEDIFF(YEAR, Дата_рождения, GETDATE());
-SELECT Книги.Название, Авторы.Фамилия
-FROM Книги
-INNER JOIN Авторы_книг ON Книги.Код_книги = Авторы_книг.Код_книги
-INNER JOIN Авторы ON Авторы_книг.Код_автора = Авторы.Код_автора
-ORDER BY Авторы.Фамилия ASC;
-SELECT Книги.Название, Жанры.Название AS Жанр, Книги.Рейтинг
-FROM Книги
-INNER JOIN Жанры ON Книги.Код_жанра = Жанры.Код_жанра
-WHERE YEAR(Книги.Год_выпуска) > 2010;
-SELECT DISTINCT Читатели.Фамилия, Читатели.Адрес
-FROM Читатели
-INNER JOIN Выданные_книги ON Читатели.Код_читателя = Выданные_книги.Код_читателя
-WHERE YEAR(Выданные_книги.Дата_выдачи) = 2023 AND MONTH(Выданные_книги.Дата_выдачи) = 4;
-SELECT Книги.Название, Книги.Рейтинг
-FROM Книги
-WHERE Книги.Рейтинг > (SELECT AVG(Рейтинг) FROM Книги);
+SELECT Issue_code, DATEDIFF(day, Issue_date, GETDATE()) AS Days_from_the_distribution_date FROM GETDATE();
+SELECT Name, Price, Price * 0.9 AS Price_with_discount FROM Books;
+SELECT Last Name, First Name, DATEDIFF(YEAR, Birth Date, GETDATE()) AS Age FROM Readers;
+SELECT Book Code, COUNT(*) AS Number_of_Books FROM GIVEN_Books GROUP BY Book Code;
+SELECT Genre, AVG(Price) AS Average_price FROM Books GROUP BY Genre;
+SELECT DATEDIFF(YEAR, Birth Date, GETDATE() AS Age, COUNT(*) AS Number of_readers FROM Readers GROUP BY DATEDIFF(YEAR, Birth Date, GETDATE();
+SELECT Books.Title, Authors.Last Name
+FROM Books
+INNER JOIN Authors_books ON Books.Book_code = Authors_books.Book_code
+INNER JOIN Authors ON Authors_books.Author_code = Authors.Author_code
+ORDER BY Authors.Last Name ASC;
+SELECT Books.Title, Genres.Title AS Genre, Books.Rating
+FROM Books
+INNER JOIN Genres ON Books.Genre_code = Genres.Genre_code
+WHERE YEAR(Books.Year_issue) > 2010;
+SELECT DISTINCT Readers.Last Name, Readers.Address
+FROM Readers
+INNER JOIN of Issued_books ON Readers.Reader_code = Issued_books.Reader_code
+WHERE YEAR(Giving_books.Giving_ date) = 2023 AND MONTH(Giving_books.Giving_ date) = 4;
+SELECT Books.Title, Books.Rating
+FROM Books
+WHERE Books.Rating > (SELECT AVG(Rating) FROM Books);
